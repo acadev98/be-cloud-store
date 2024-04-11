@@ -18,13 +18,6 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	private ProductsRepository repository;
 
-	public Integer getNextId() {
-		Optional<Products> entityMaxId = repository.findTopByOrderByIdDesc();
-		if (entityMaxId.isPresent())
-			return (entityMaxId.get().getId() + 1);
-		return 1;
-	}
-
 	public String echo() {
 		return "product echo message service";
 	}

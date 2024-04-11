@@ -1,6 +1,12 @@
 package com.acadev.cloudstore.utils;
 
 public class MessagesUtils {
+
+	/** auth */
+	public static final String USER_LOGED = "Usuario logeado.";
+	public static final String USER_CREATED = "Usuario creado.";
+	
+	/** products */
 	public static final String LIST_OF_PRODUCTS = "Lista de productos encontrados.";
 	public static final String PRODUCT_FOUND = "Producto encontrado.";
 	public static final String PRODUCT_CREATED = "Producto creado.";
