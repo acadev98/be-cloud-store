@@ -12,6 +12,10 @@ public class MessagesUtils {
 	public static final String PRODUCT_CREATED = "Producto creado.";
 	public static final String PRODUCT_UPDATED = "Producto modificado.";
 	public static final String PRODUCT_DELETED = "Producto eliminado.";
+	
+	/** files */
+	public static final String LIST_OF_FILES = "Lista de archivos encontrados.";
+	public static final String FILE_SAVED = "Archivos guardados.";
 
 	/** validaciones */
 	public static final String DNI_REQUIRED = "DNI es requerido.";

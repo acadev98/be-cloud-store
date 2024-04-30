@@ -3,6 +3,7 @@ package com.acadev.cloudstore.service;
 import java.util.List;
 
 import com.acadev.cloudstore.database.entity.Products;
+import com.acadev.cloudstore.model.request.ProductRequest;
 
 public interface ProductService {
 
@@ -14,8 +15,8 @@ public interface ProductService {
 
 	Products deleteProductById(Integer id);
 
-	Products createProduct(Products product);
+	Products createProduct(ProductRequest product);
 
-	Products updateProductById(Integer id, Products product);
+	Products updateProductById(Integer id, ProductRequest product);
 
 }

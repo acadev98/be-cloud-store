@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.acadev.cloudstore.database.entity.Products;
 import com.acadev.cloudstore.handler.ResponseHandler;
+import com.acadev.cloudstore.model.request.ProductRequest;
 import com.acadev.cloudstore.service.ProductService;
 import com.acadev.cloudstore.utils.MessagesUtils;
 
@@ -40,12 +40,12 @@ public class ProductController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Object> createProduct(@RequestBody Products product) {
+	public ResponseEntity<Object> createProduct(@RequestBody ProductRequest product) {
 		return ResponseHandler.generateResponse(MessagesUtils.PRODUCT_CREATED, HttpStatus.CREATED, service.createProduct(product));
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Object> updateProductById(@PathVariable("id") Integer id, @RequestBody Products product) {
+	public ResponseEntity<Object> updateProductById(@PathVariable("id") Integer id, @RequestBody ProductRequest product) {
 		return ResponseHandler.generateResponse(MessagesUtils.PRODUCT_UPDATED, HttpStatus.OK, service.updateProductById(id, product));
 	}
 

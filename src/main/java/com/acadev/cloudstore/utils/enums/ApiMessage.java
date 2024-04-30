@@ -19,7 +19,9 @@ public enum ApiMessage {
 	ACCESS_DENIED(HttpStatus.UNAUTHORIZED, "Acceso denegado."),
 	CONTENT_NOT_FOUND(HttpStatus.NOT_FOUND, "No se encontraron resultados."),
 	OPPONENT_ALREADY_EXISTS(HttpStatus.BAD_REQUEST, "El equipo rival ya existe."),
-	FILE_EMPTY(HttpStatus.BAD_REQUEST, "El archivo enviado es vacío."),;
+	FILE_EMPTY(HttpStatus.BAD_REQUEST, "No se enviaron archivos."),
+	FILE_SAVE_ERROR(HttpStatus.BAD_REQUEST, "Error al guardar las imagenes."),
+	FILE_NOT_PERMIT(HttpStatus.BAD_REQUEST, "Uno o varios archivos no cumplen con el tipo jpg, jpeg, png, mp4, avi, mov."),;
 
 	private final HttpStatus httpStatus;
 	private final String message;

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.acadev.cloudstore.database.entity.Products;
 import com.acadev.cloudstore.database.repository.ProductsRepository;
 import com.acadev.cloudstore.handler.exception.ApiException;
+import com.acadev.cloudstore.model.request.ProductRequest;
 import com.acadev.cloudstore.service.ProductService;
 import com.acadev.cloudstore.utils.enums.ApiMessage;
 
@@ -40,20 +41,28 @@ public class ProductServiceImpl implements ProductService {
 		}
 	}
 
-	public Products createProduct(Products product) {
+	public Products createProduct(ProductRequest request) {
+		Products product = Products.builder()
+				.title(request.getTitle())
+				.description(request.getDescription())
+				.type(request.getType())
+				.currency(request.getCurrency())
+				.price(request.getPrice())
+				.build();
+		
 		return repository.save(product);
 	}
 
-	public Products updateProductById(Integer id, Products product) {
-		Products productUpdate = getProductById(id);
+	public Products updateProductById(Integer id, ProductRequest request) {
+		Products product = getProductById(id);
 
-			productUpdate.setTitle(product.getTitle());
-			productUpdate.setDescription(product.getDescription());
-			productUpdate.setType(product.getType());
-			productUpdate.setCurrency(product.getCurrency());
-			productUpdate.setPrice(product.getPrice());
+			product.setTitle(request.getTitle());
+			product.setDescription(request.getDescription());
+			product.setType(request.getType());
+			product.setCurrency(request.getCurrency());
+			product.setPrice(request.getPrice());
 
-		return repository.save(productUpdate);
+		return repository.save(product);
 	}
 
 	public Products deleteProductById(Integer id) {
